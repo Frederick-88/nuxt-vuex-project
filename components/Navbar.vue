@@ -1,6 +1,6 @@
  <template>
   <div class="nav">
-    <nuxt-link to="/" class="brand">Real World Events</nuxt-link>
+    <nuxt-link to="/" class="brand">NUXT - VUEX - PROJECT</nuxt-link>
     <nav>
       <nuxt-link class="nav-item" to="/">Home</nuxt-link>&nbsp;|
       <nuxt-link class="nav-item" to="/todoapp">TodoApp</nuxt-link>&nbsp;|

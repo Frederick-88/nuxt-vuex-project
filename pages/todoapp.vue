@@ -6,7 +6,7 @@
         <div class="bg-white w-50 p-3 d-flex justify-content-center" style="border-radius:1rem">
           <button class="btn btn-outline-nuxt">
             ADD TODO
-            <i class="far fa-plus-square ml-2 fa-lg"></i>
+            <i class="far fa-plus ml-2 fa-lg"></i>
           </button>
           <div class="vertical-border ml-3 mr-2"></div>
           <div>
