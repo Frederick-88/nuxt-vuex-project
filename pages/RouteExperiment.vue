@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>New Navbar Here</h2>
+    <h2 class="text-center">Navbar Experiment to Meet subroutes</h2>
     <NavExperiment />
   </div>
 </template>

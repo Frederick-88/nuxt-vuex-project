@@ -2,8 +2,8 @@
   <div class="nav">
     <nuxt-link to="/" class="brand">Real World Events</nuxt-link>
     <nav>
-      <nuxt-link class="nav-item" to="/">List</nuxt-link>&nbsp;|
-      <nuxt-link class="nav-item" to="/create">Create</nuxt-link>&nbsp;|
+      <nuxt-link class="nav-item" to="/">Home</nuxt-link>&nbsp;|
+      <nuxt-link class="nav-item" to="/todoapp">TodoApp</nuxt-link>&nbsp;|
       <nuxt-link class="nav-item" to="/routeexperiment">Route Experiments</nuxt-link>
     </nav>
   </div>

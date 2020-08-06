@@ -1,7 +1,9 @@
 <template>
   <div class="app">
     <Navbar />
-    <Logo />
+    <div class="text-center">
+      <Logo class="mb-3" />
+    </div>
     <Nuxt />
   </div>
 </template>
@@ -19,7 +21,6 @@ export default {
 
 <style>
 .app {
-  text-align: center;
   padding: 2rem 5rem;
 }
 </style>
