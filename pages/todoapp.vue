@@ -14,13 +14,17 @@
               <button @click="sortByDoneFunction" class="btn nuxt-button">
                 <i class="far fa-check-circle fa-lg"></i>
               </button>
-              <p class="font-weight-bold align-self-center my-0 nuxt__text">Sort By Done</p>
+              <p
+                class="font-weight-bold align-self-center my-0 nuxt__text"
+              >Sort By Done({{dataTodosDoneLength}})</p>
             </span>
             <span v-else class="d-flex d-row">
               <button @click="sortByDoneFunction" class="btn nuxt-secondary-btn">
                 <i class="far fa-circle fa-lg"></i>
               </button>
-              <p class="font-weight-bold align-self-center my-0 nuxt__text">Sort By Done</p>
+              <p
+                class="font-weight-bold align-self-center my-0 nuxt__text"
+              >Sort By Done({{dataTodosDoneLength}})</p>
             </span>
           </div>
         </div>
@@ -110,6 +114,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -130,13 +135,13 @@ export default {
       console.log(id);
     }
   },
-  computed: {
-    // Actually could just take by "this.dataTodos", but just to show you how to get from state in vuex.
-    dataTodosDone: state => {
-      // will filter item with isDone(true)
-      return state.dataTodos.filter(item => item.isDone);
+  computed: mapGetters({
+    // see this for docs "https://codesandbox.io/s/gallant-tu-icxrw?file=/pages/todos.vue:526-570", basically "(our filename)/(getterName)"
+    dataTodosDone: "todos/dataTodosDone",
+    dataTodosDoneLength() {
+      this.dataTodosDone.length;
     }
-  }
+  })
 };
 </script>
 

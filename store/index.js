@@ -15,3 +15,9 @@ export const mutations = {
     state.number--;
   }
 };
+
+export const actions = {
+  incrementAction(context) {
+    context.commit("increment");
+  }
+};
