@@ -17,8 +17,6 @@ export const state = () => ({
 
 export const mutations = {
   markDone(state, id) {
-    console.log(id);
-
     state.dataTodos.map(item => {
       if (id === item.id) {
         // To Change isDone depends on its' state whether its true/false.

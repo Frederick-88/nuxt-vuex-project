@@ -2,7 +2,8 @@
   <div>
     <h1>Events</h1>
     <h2 class="nuxt__text">State of Number: {{countPlusLocalState}}</h2>
-    <button class="btn btn-success">Add Number +1</button>
+    <button @click="increment" class="btn btn-success">Add Number +1</button>
+    <button @click="decrement" class="btn btn-danger">Decrease Number -1</button>
   </div>
 </template>
 
@@ -17,7 +18,16 @@ export default {
       localNumber: 3
     };
   },
-  methods: {},
+  methods: {
+    increment() {
+      this.$store.commit("increment");
+    },
+    decrement() {
+      if (this.countPlusLocalState !== 0) {
+        this.$store.commit("decrement");
+      }
+    }
+  },
   // method 2 to call from state
   computed: mapState({
     number: state => state.number,

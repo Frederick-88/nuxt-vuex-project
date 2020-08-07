@@ -3,7 +3,7 @@
     <h2 class="nuxt__text text-center">TO-DO-APP</h2>
     <section class="nuxt-bg">
       <div class="mb-4 mx-5 d-flex justify-content-center">
-        <div class="bg-white w-50 p-3 d-flex justify-content-center" style="border-radius:1rem">
+        <div class="bg-white w-50 p-3 d-flex justify-content-center" style="border-radius:0.25rem">
           <button class="btn btn-outline-nuxt">
             ADD TODO
             <i class="far fa-plus ml-2 fa-lg"></i>
