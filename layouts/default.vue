@@ -23,4 +23,8 @@ export default {
 .app {
   padding: 2rem 5rem;
 }
+.nuxt__text {
+  color: #39b982;
+}
 </style>
+

@@ -2,7 +2,7 @@
   <div>
     <h2 class="nuxt__text text-center">TO-DO-APP</h2>
     <section class="nuxt-bg">
-      <div class="mb-4 d-flex justify-content-center">
+      <div class="mb-4 mx-5 d-flex justify-content-center">
         <div class="bg-white w-50 p-3 d-flex justify-content-center" style="border-radius:1rem">
           <button class="btn btn-outline-nuxt">
             ADD TODO
@@ -49,7 +49,10 @@
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title nuxt__text font-weight-bold">{{dataTodo.title}}</h5>
+                    <h5
+                      :class="{doneTxt: dataTodo.isDone}"
+                      class="card-title nuxt__text font-weight-bold"
+                    >{{dataTodo.title}}</h5>
                     <p class="card-text text-secondary">{{dataTodo.time}}</p>
                   </div>
                 </div>
@@ -122,6 +125,10 @@ export default {
   background-color: #39b982;
   color: whitesmoke;
 }
+.doneTxt {
+  text-decoration: line-through;
+  color: black;
+}
 .delete-btn {
   color: #dc3545;
 }
@@ -147,9 +154,7 @@ export default {
   border-radius: 2rem;
   padding: 3rem;
 }
-.nuxt__text {
-  color: #39b982;
-}
+
 .nuxt__border {
   border-top: 1px solid #39b982;
 }
