@@ -1,11 +1,19 @@
 <template>
   <div>
     <h1>Events</h1>
+    {{ number }}
   </div>
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  computed: {
+    ...mapState({
+      number: state => state.todos.number
+    })
+  }
+};
 </script>
 
 <style>

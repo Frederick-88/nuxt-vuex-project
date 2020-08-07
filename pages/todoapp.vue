@@ -54,7 +54,7 @@
                   </div>
                 </div>
                 <div class="col-md-2 my-auto text-center">
-                  <button class="btn delete-btn">
+                  <button @click="deleteTodo(dataTodo.id)" class="btn delete-btn">
                     <i class="far fa-times-circle fa-2x"></i>
                   </button>
                 </div>
@@ -100,8 +100,12 @@ export default {
     },
     sortByDoneFunction() {
       this.sortByDone = !this.sortByDone;
+    },
+    deleteTodo(id) {
+      console.log(id);
     }
-  }
+  },
+  computed: {}
 };
 </script>
 
