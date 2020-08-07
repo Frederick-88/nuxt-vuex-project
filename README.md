@@ -1,5 +1,11 @@
 # nuxt-vuex-project
 
+### Notes:
+
+- each file in store folder must not possess capital in front of file name
+- you can't change state directly, you need to use mutation every time want to change state
+- ways that vuex in nuxt works, is different from usual. mutation,action,getter,etc. make sure to learn from docs in nuxt, or scrimba, or vueschool.
+
 ## Build Setup
 
 ```bash

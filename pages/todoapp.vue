@@ -27,9 +27,48 @@
       </div>
 
       <div class="mx-5">
-        <div class="row">
+        <div v-if="!sortByDone" class="row">
           <div
             v-for="(dataTodo, index) in dataTodos"
+            :key="index"
+            class="col-12 d-flex justify-content-center"
+          >
+            <div class="card mb-3 w-50">
+              <div class="row no-gutters">
+                <div class="col-md-2 my-auto text-center">
+                  <button
+                    v-if="(dataTodo.isDone)"
+                    @click="markDone(dataTodo.id)"
+                    class="btn nuxt-button"
+                  >
+                    <i class="far fa-check-circle fa-2x"></i>
+                  </button>
+                  <button @click="markDone(dataTodo.id)" v-else class="btn nuxt-secondary-btn">
+                    <i class="far fa-circle fa-2x"></i>
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5
+                      :class="{doneTxt: dataTodo.isDone}"
+                      class="card-title nuxt__text font-weight-bold"
+                    >{{dataTodo.title}}</h5>
+                    <p class="card-text text-secondary">{{dataTodo.time}}</p>
+                  </div>
+                </div>
+                <div class="col-md-2 my-auto text-center">
+                  <button @click="deleteTodo(dataTodo.id)" class="btn delete-btn">
+                    <i class="far fa-times-circle fa-2x"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-else class="row">
+          <div
+            v-for="(dataTodo, index) in dataTodosDone"
             :key="index"
             class="col-12 d-flex justify-content-center"
           >
@@ -71,35 +110,18 @@
 </template>
 
 <script>
-// import {mapGetters} from "vuex"
 export default {
   data() {
     return {
-      dataTodos: [
-        {
-          id: 1,
-          isDone: false,
-          title: "Big Design Meeting",
-          time: "10.30 - 12.30"
-        },
-        {
-          id: 2,
-          isDone: true,
-          title: "Big Developer Meeting",
-          time: "09.30 - 12.30"
-        }
-      ],
+      // this is 1 way to call a state. $store is already global
+      dataTodos: this.$store.state.todos.dataTodos,
       sortByDone: false
     };
   },
   methods: {
     markDone(id) {
-      this.dataTodos.map(item => {
-        if (id === item.id) {
-          // To Change isDone depends on its' state whether its true/false.
-          item.isDone = !item.isDone;
-        }
-      });
+      // kalau di file index ckup "increment", klau di file lain mcam gini:
+      this.$store.commit("todos/markDone", id);
     },
     sortByDoneFunction() {
       this.sortByDone = !this.sortByDone;
@@ -108,7 +130,13 @@ export default {
       console.log(id);
     }
   },
-  computed: {}
+  computed: {
+    // Actually could just take by "this.dataTodos", but just to show you how to get from state in vuex.
+    dataTodosDone: state => {
+      // will filter item with isDone(true)
+      return state.dataTodos.filter(item => item.isDone);
+    }
+  }
 };
 </script>
 
