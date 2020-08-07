@@ -120,7 +120,9 @@ export default {
     return {
       // this is 1 way to call a state. $store is already global
       dataTodos: this.$store.state.todos.dataTodos,
-      sortByDone: false
+      sortByDone: false,
+      number1: 2,
+      number2: 3
     };
   },
   methods: {
@@ -135,13 +137,23 @@ export default {
       console.log(id);
     }
   },
-  computed: mapGetters({
-    // see this for docs "https://codesandbox.io/s/gallant-tu-icxrw?file=/pages/todos.vue:526-570", basically "(our filename)/(getterName)"
-    dataTodosDone: "todos/dataTodosDone",
-    dataTodosDoneLength() {
-      this.dataTodosDone.length;
+  // this is how you console log in nuxt
+  mounted() {
+    console.log(this.dataTodosDone);
+    console.log(this.dataTodosDoneLength);
+  },
+  computed: {
+    // mapGetters will only map(like ReactJS) the getters in our Vuex.
+    ...mapGetters({
+      // see this for docs "https://codesandbox.io/s/gallant-tu-icxrw?file=/pages/todos.vue:526-570", basically "(our filename)/(getterName)"
+      dataTodosDone: "todos/dataTodosDone",
+      dataTodosDoneLength: "todos/dataTodosDoneLength"
+    }),
+    // this is how you add another computed property, you can't define another computed property inside mapGetter.
+    addLocalNumber() {
+      return this.number1 + this.number2;
     }
-  })
+  }
 };
 </script>
 
