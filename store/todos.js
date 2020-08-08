@@ -27,6 +27,12 @@ export const state = () => ({
   ]
 });
 
+export const actions = {
+  addTodoList(context) {
+    context.commit("");
+  }
+};
+
 export const mutations = {
   markDone(state, id) {
     state.dataTodos.map(item => {

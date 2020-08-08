@@ -66,8 +66,12 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "bootstrap-vue/nuxt",
+    "vue-toastification/nuxt"
   ],
+  // From vue-toastification. (Must put when you put in Modules)
+  toast: {},
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
