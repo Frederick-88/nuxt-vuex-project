@@ -1,7 +1,6 @@
 <template>
   <div>
     <h2 class="nuxt__text text-center">TO-DO-APP</h2>
-    <AddTodoModal />
     <section class="nuxt-bg">
       <div class="mb-4 mx-5 d-flex justify-content-center">
         <div class="bg-white w-50 p-3 d-flex justify-content-center" style="border-radius:0.25rem">
@@ -116,13 +115,13 @@
 
 <script>
 import { mapGetters } from "vuex";
-import AddTodoModal from "../components/AddTodoModal";
 
 export default {
   data() {
     return {
       // this is 1 way to call a state. $store is already global
       dataTodos: this.$store.state.todos.dataTodos,
+
       sortByDone: false,
       number1: 2,
       number2: 3
