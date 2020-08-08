@@ -28,8 +28,8 @@ export const state = () => ({
 });
 
 export const actions = {
-  addTodoList(context) {
-    context.commit("");
+  addTodoAction(context, data) {
+    context.commit("addTodoList", data);
   }
 };
 
@@ -41,6 +41,10 @@ export const mutations = {
         item.isDone = !item.isDone;
       }
     });
+  },
+  // You can try to remove the {} from data. It will still works but worse return received later.
+  addTodoList(state, { data }) {
+    state.dataTodos = [...state.dataTodos, data];
   }
 };
 

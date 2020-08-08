@@ -179,13 +179,11 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
     return {
-      // this is 1 way to call a state. $store is already global
-      dataTodos: this.$store.state.todos.dataTodos,
       displayAddTodoModal: false,
       sortByDone: false,
       number1: 2,
@@ -201,8 +199,13 @@ export default {
     };
   },
   methods: {
+    // 2nd Better way, on doing actions in Vuex
+    ...mapActions({
+      addTodoAction: "todos/addTodoAction"
+    }),
     markDone(id) {
-      // kalau di file index ckup "increment", klau di file lain mcam gini:
+      // this is 1 way on doing mutation.
+      // if the file that you target in store was only index, "increment" would be enough. But if it's in another file then do like import, like this:
       this.$store.commit("todos/markDone", id);
     },
     sortByDoneFunction() {
@@ -213,7 +216,12 @@ export default {
     },
     // Submit addTodoInput
     addTodoList() {
+      // after import from mapAction, just easily
       console.log(this.addTodoInput);
+
+      this.addTodoAction({
+        data: this.addTodoInput
+      });
       // Notification Toast
       this.$toast.info("You've just added your TodoList!", {
         timeout: 4000,
@@ -221,7 +229,9 @@ export default {
       });
       // After Submit Close Modal & Reset Input
       this.displayAddTodoModal = false;
-      (this.addTodoInput.title = ""), (this.addTodoInput.time = "");
+
+      // Need to figure out how to set it back once uploaded.
+      // (this.addTodoInput.title = ""), (this.addTodoInput.time = "");
     }
   },
   // this is how you console log in nuxt
@@ -239,6 +249,10 @@ export default {
     // this is how you add another computed property, you can't define another computed property inside mapGetter.
     addLocalNumber() {
       return this.number1 + this.number2;
+    },
+    // this is 1 way to call a state. $store is already global
+    dataTodos() {
+      return this.$store.state.todos.dataTodos;
     }
   }
 };
