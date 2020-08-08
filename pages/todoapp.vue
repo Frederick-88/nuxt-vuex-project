@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2 class="nuxt__text text-center">TO-DO-APP</h2>
+    <AddTodoModal />
     <section class="nuxt-bg">
       <div class="mb-4 mx-5 d-flex justify-content-center">
         <div class="bg-white w-50 p-3 d-flex justify-content-center" style="border-radius:0.25rem">
@@ -16,7 +17,7 @@
               </button>
               <p
                 class="font-weight-bold align-self-center my-0 nuxt__text"
-              >Sort By Done({{dataTodosDoneLength}})</p>
+              >Sort By Done ({{dataTodosDoneLength}})</p>
             </span>
             <span v-else class="d-flex d-row">
               <button @click="sortByDoneFunction" class="btn nuxt-secondary-btn">
@@ -24,7 +25,7 @@
               </button>
               <p
                 class="font-weight-bold align-self-center my-0 nuxt__text"
-              >Sort By Done({{dataTodosDoneLength}})</p>
+              >Sort By Done ({{dataTodosDoneLength}})</p>
             </span>
           </div>
         </div>
@@ -115,6 +116,8 @@
 
 <script>
 import { mapGetters } from "vuex";
+import AddTodoModal from "../components/AddTodoModal";
+
 export default {
   data() {
     return {
@@ -172,7 +175,7 @@ export default {
 }
 .doneTxt {
   text-decoration: line-through;
-  color: black;
+  color: #35495e;
 }
 .delete-btn {
   color: #dc3545;
