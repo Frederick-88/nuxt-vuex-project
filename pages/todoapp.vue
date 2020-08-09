@@ -12,7 +12,7 @@
           <div class="vertical-border ml-3 mr-2"></div>
           <div>
             <span v-if="sortByDone" class="d-flex d-row">
-              <button @click="sortByDoneFunction" class="btn nuxt-button">
+              <button @click="sortByDoneFunction" class="btn nuxt-icon-button">
                 <i class="far fa-check-circle fa-lg"></i>
               </button>
               <p
@@ -45,7 +45,7 @@
                   <button
                     v-if="dataTodo.isDone"
                     @click="markDone(dataTodo.id)"
-                    class="btn nuxt-button"
+                    class="btn nuxt-icon-button"
                   >
                     <i class="far fa-check-circle fa-2x"></i>
                   </button>
@@ -85,7 +85,7 @@
                   <button
                     v-if="dataTodo.isDone"
                     @click="markDone(dataTodo.id)"
-                    class="btn nuxt-button"
+                    class="btn nuxt-icon-button"
                   >
                     <i class="far fa-check-circle fa-2x"></i>
                   </button>
@@ -254,11 +254,11 @@ export default {
 .nuxt-secondary-btn:hover {
   color: #39b982;
 }
-.nuxt-button {
+.nuxt-icon-button {
   background: transparent;
   color: #39b982;
 }
-.nuxt-button:hover {
+.nuxt-icon-button:hover {
   color: #bbbbbb;
 }
 .nuxt-bg {

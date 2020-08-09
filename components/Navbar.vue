@@ -4,7 +4,8 @@
     <nav>
       <nuxt-link class="nav-item" to="/">Home</nuxt-link>&nbsp;|
       <nuxt-link class="nav-item" to="/todoapp">TodoApp</nuxt-link>&nbsp;|
-      <nuxt-link class="nav-item" to="/routeexperiment">Route Experiment</nuxt-link>
+      <nuxt-link class="nav-item" to="/routeexperiment">Route Experiment</nuxt-link>&nbsp;|
+      <nuxt-link class="nav-item" to="/review">Review Page</nuxt-link>
     </nav>
   </div>
 </template>
