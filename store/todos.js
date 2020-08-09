@@ -32,8 +32,6 @@ export const actions = {
     context.commit("addTodoList", data);
   },
   removeTodoAction(context, id) {
-    console.log(`this is from action ${id}`);
-
     context.commit("removeTodoList", id);
   }
 };
@@ -50,7 +48,12 @@ export const mutations = {
   // You can try to remove the {} from data. It will still works but worse return received later.
   addTodoList(state, { data }) {
     state.dataTodos = [...state.dataTodos, data];
-    console.log(state.dataTodos);
+
+    // Notification Toast
+    this.$toast.info("You've just added your TodoList!", {
+      timeout: 4000,
+      icon: "fab fa-vuejs"
+    });
   },
   removeTodoList(state, id) {
     // filtering todoList and remove the todo with the same id.
@@ -63,6 +66,12 @@ export const mutations = {
       }
     });
     state.dataTodos = removedTodoList;
+
+    // Notification Toast
+    this.$toast.success("You've deleted a TodoList!", {
+      timeout: 4000,
+      icon: "fab fa-vuejs"
+    });
   }
 };
 

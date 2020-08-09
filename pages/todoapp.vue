@@ -186,11 +186,6 @@ export default {
         data: addTodoInputData
       });
 
-      // Notification Toast
-      this.$toast.info("You've just added your TodoList!", {
-        timeout: 4000,
-        icon: "fab fa-vuejs"
-      });
       // After Submit Close Modal & Reset Input
       this.displayAddTodoModal = false;
       (this.addTodoInput.title = ""), (this.addTodoInput.time = "");
@@ -198,7 +193,6 @@ export default {
   },
   // this is how you console log in nuxt
   mounted() {
-    console.log(this.dataTodosDone);
     console.log(this.dataTodosDoneLength);
   },
   computed: {
@@ -221,6 +215,11 @@ export default {
 </script>
 
 <style>
+/* Change the style of toast */
+.Vue-Toastification__toast--success {
+  background-color: #39b982 !important;
+}
+/* ------------------------- */
 .btn:focus {
   box-shadow: none;
 }
