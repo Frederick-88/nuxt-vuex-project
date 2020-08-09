@@ -25,7 +25,7 @@
             name="headline"
             type="text"
             class="w-75 py-2 px-3"
-            placeholder="Headline of Review"
+            placeholder="Headline of your Review"
             v-model="dataInput.headline"
             required
           />
@@ -34,7 +34,7 @@
             name="description"
             type="text"
             class="w-75 py-2 px-3"
-            placeholder="Share with us how you felt on AzurDrones' Products!"
+            placeholder="Share with us how you felt on this Exploration!"
             v-model="dataInput.description"
             required
           />
@@ -48,10 +48,6 @@
       <h3 class="nuxt__text font-weight-bold">The Review Data belongs here</h3>
       <div class="row mb-4">
         <div v-for="(review, index) in dataReview" :key="index" class="col-4 mt-4">
-          <!-- Try To Make Loading -->
-          <!-- <div v-if="loadingDataReview"><h1>Loading...</h1></div> -->
-          <!-- <div v-else>Not Loading...</div> -->
-
           <div class="special-card">
             <div class="d-flex justify-content-center">
               <!-- In my backend, ImageBook = Image(At Here) -->
@@ -73,21 +69,12 @@
 </template>
 
 <script>
-import axios from "axios";
-const url = "https://fd-library.herokuapp.com";
+import { mapActions } from "vuex";
 export default {
   // Mounted = UseEffect/ComponentDidMount in ReactJS
   mounted() {
-    axios
-      .get(`${url}/library/get`)
-      .then(res => {
-        this.dataReview = res.data.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    // try to make loading page in it.
-    // .finally(() => (this.loadingDataReview = false));
+    this.getDataReviewAction();
+    console.log(this.dataReview);
   },
   data() {
     return {
@@ -107,13 +94,17 @@ export default {
       dataInput: {
         headline: "",
         description: ""
-      },
-      // From Axios
-      dataReview: null
+      }
+
       // loadingDataReview: true,
     };
   },
   methods: {
+    // 1 way on defining actions from other component in store, "review" refers to file name
+    ...mapActions("review", {
+      getDataReviewAction: "getDataReviewAction",
+      addDataReviewAction: "addDataReviewAction"
+    }),
     // update the character gender
     updateSelectedCharacter(selected) {
       this.selectedCharacter = selected;
@@ -137,25 +128,16 @@ export default {
         status: true
       };
       // Axios Post to Backend
-      axios
-        .post(`${url}/library/post`, inputReview)
-        .then(res => {
-          console.log(res);
-          console.log(inputReview);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-      // Automatically update the component for a live update like reducer in ReactJS
-      this.dataReview = [...this.dataReview, inputReview];
-      // Toast Alert
-      this.$toast.info("Your Review has been Posted!", {
-        timeout: 4000,
-        // the icon is available for fontawesome too!
-        icon: "fab fa-vuejs"
-      });
+      this.addDataReviewAction(inputReview);
+
       // Reset the form, the code structure below resetted by Prettier.
       (this.dataInput.headline = ""), (this.dataInput.description = "");
+    }
+  },
+  computed: {
+    // From Axios
+    dataReview() {
+      return this.$store.state.review.dataReviews;
     }
   }
 };
