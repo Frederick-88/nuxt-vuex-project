@@ -45,6 +45,7 @@ export const mutations = {
   // You can try to remove the {} from data. It will still works but worse return received later.
   addTodoList(state, { data }) {
     state.dataTodos = [...state.dataTodos, data];
+    console.log(state.dataTodos);
   }
 };
 

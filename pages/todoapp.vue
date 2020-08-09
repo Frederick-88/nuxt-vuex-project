@@ -3,15 +3,9 @@
     <h2 class="nuxt__text text-center">TO-DO-APP</h2>
     <section class="nuxt-bg">
       <div class="mb-4 mx-5 d-flex justify-content-center">
-        <div
-          class="bg-white w-50 p-3 d-flex justify-content-center"
-          style="border-radius:0.25rem"
-        >
+        <div class="bg-white w-50 p-3 d-flex justify-content-center" style="border-radius:0.25rem">
           <!-- No function, directly change the state of "displayAddTodoModal" -->
-          <button
-            @click="displayAddTodoModal = !displayAddTodoModal"
-            class="btn btn-outline-nuxt"
-          >
+          <button @click="displayAddTodoModal = !displayAddTodoModal" class="btn btn-outline-nuxt">
             ADD TODO
             <i class="far fa-plus ml-2 fa-lg"></i>
           </button>
@@ -21,20 +15,17 @@
               <button @click="sortByDoneFunction" class="btn nuxt-button">
                 <i class="far fa-check-circle fa-lg"></i>
               </button>
-              <p class="font-weight-bold align-self-center my-0 nuxt__text">
-                Sort By Done ({{ dataTodosDoneLength }})
-              </p>
+              <p
+                class="font-weight-bold align-self-center my-0 nuxt__text"
+              >Sort By Done ({{ dataTodosDoneLength }})</p>
             </span>
             <span v-else class="d-flex d-row">
-              <button
-                @click="sortByDoneFunction"
-                class="btn nuxt-secondary-btn"
-              >
+              <button @click="sortByDoneFunction" class="btn nuxt-secondary-btn">
                 <i class="far fa-circle fa-lg"></i>
               </button>
-              <p class="font-weight-bold align-self-center my-0 nuxt__text">
-                Sort By Done ({{ dataTodosDoneLength }})
-              </p>
+              <p
+                class="font-weight-bold align-self-center my-0 nuxt__text"
+              >Sort By Done ({{ dataTodosDoneLength }})</p>
             </span>
           </div>
         </div>
@@ -57,11 +48,7 @@
                   >
                     <i class="far fa-check-circle fa-2x"></i>
                   </button>
-                  <button
-                    @click="markDone(dataTodo.id)"
-                    v-else
-                    class="btn nuxt-secondary-btn"
-                  >
+                  <button @click="markDone(dataTodo.id)" v-else class="btn nuxt-secondary-btn">
                     <i class="far fa-circle fa-2x"></i>
                   </button>
                 </div>
@@ -70,17 +57,12 @@
                     <h5
                       :class="{ doneTxt: dataTodo.isDone }"
                       class="card-title nuxt__text font-weight-bold"
-                    >
-                      {{ dataTodo.title }}
-                    </h5>
+                    >{{ dataTodo.title }}</h5>
                     <p class="card-text text-secondary">{{ dataTodo.time }}</p>
                   </div>
                 </div>
                 <div class="col-md-2 my-auto text-center">
-                  <button
-                    @click="deleteTodo(dataTodo.id)"
-                    class="btn delete-btn"
-                  >
+                  <button @click="deleteTodo(dataTodo.id)" class="btn delete-btn">
                     <i class="far fa-times-circle fa-2x"></i>
                   </button>
                 </div>
@@ -105,11 +87,7 @@
                   >
                     <i class="far fa-check-circle fa-2x"></i>
                   </button>
-                  <button
-                    @click="markDone(dataTodo.id)"
-                    v-else
-                    class="btn nuxt-secondary-btn"
-                  >
+                  <button @click="markDone(dataTodo.id)" v-else class="btn nuxt-secondary-btn">
                     <i class="far fa-circle fa-2x"></i>
                   </button>
                 </div>
@@ -118,17 +96,12 @@
                     <h5
                       :class="{ doneTxt: dataTodo.isDone }"
                       class="card-title nuxt__text font-weight-bold"
-                    >
-                      {{ dataTodo.title }}
-                    </h5>
+                    >{{ dataTodo.title }}</h5>
                     <p class="card-text text-secondary">{{ dataTodo.time }}</p>
                   </div>
                 </div>
                 <div class="col-md-2 my-auto text-center">
-                  <button
-                    @click="deleteTodo(dataTodo.id)"
-                    class="btn delete-btn"
-                  >
+                  <button @click="deleteTodo(dataTodo.id)" class="btn delete-btn">
                     <i class="far fa-times-circle fa-2x"></i>
                   </button>
                 </div>
@@ -147,30 +120,16 @@
       >
         <form @submit.prevent="addTodoList">
           <p class="mb-1">Title</p>
-          <input
-            v-model="addTodoInput.title"
-            type="text"
-            class="w-100 mb-3 form-control"
-            required
-          />
+          <input v-model="addTodoInput.title" type="text" class="w-100 mb-3 form-control" required />
           <p class="mb-1">Time</p>
-          <input
-            v-model="addTodoInput.time"
-            type="text"
-            class="w-100 form-control"
-            required
-          />
+          <input v-model="addTodoInput.time" type="text" class="w-100 form-control" required />
           <div class="d-flex d-row mt-4">
             <button
               type="button"
               @click="displayAddTodoModal = !displayAddTodoModal"
               class="btn btn-outline-danger w-50 mr-4"
-            >
-              Close
-            </button>
-            <button type="submit" class="btn btn-outline-nuxt w-50 ">
-              Add
-            </button>
+            >Close</button>
+            <button type="submit" class="btn btn-outline-nuxt w-50">Add</button>
           </div>
         </form>
       </b-modal>
@@ -188,11 +147,8 @@ export default {
       sortByDone: false,
       number1: 2,
       number2: 3,
-      // AddTodoInputs
+      // AddTodoInputs, if still problem try -> https://vuex.vuejs.org/guide/forms.html
       addTodoInput: {
-        // generate an absolute random ID.
-        id: Date.now(),
-        isDone: false,
         title: "",
         time: ""
       }
@@ -216,12 +172,18 @@ export default {
     },
     // Submit addTodoInput
     addTodoList() {
-      // after import from mapAction, just easily
-      console.log(this.addTodoInput);
+      let addTodoInputData = {
+        // generate an absolute random ID.
+        id: Date.now(),
+        isDone: false,
+        title: this.addTodoInput.title,
+        time: this.addTodoInput.time
+      };
 
       this.addTodoAction({
-        data: this.addTodoInput
+        data: addTodoInputData
       });
+
       // Notification Toast
       this.$toast.info("You've just added your TodoList!", {
         timeout: 4000,
@@ -229,9 +191,7 @@ export default {
       });
       // After Submit Close Modal & Reset Input
       this.displayAddTodoModal = false;
-
-      // Need to figure out how to set it back once uploaded.
-      // (this.addTodoInput.title = ""), (this.addTodoInput.time = "");
+      (this.addTodoInput.title = ""), (this.addTodoInput.time = "");
     }
   },
   // this is how you console log in nuxt
@@ -250,7 +210,7 @@ export default {
     addLocalNumber() {
       return this.number1 + this.number2;
     },
-    // this is 1 way to call a state. $store is already global
+    // this is 1 way to call a state. $store is already global, a state must always putted in computed. So if there are changes it will be returned.
     dataTodos() {
       return this.$store.state.todos.dataTodos;
     }
