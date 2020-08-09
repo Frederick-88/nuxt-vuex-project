@@ -30,6 +30,11 @@ export const state = () => ({
 export const actions = {
   addTodoAction(context, data) {
     context.commit("addTodoList", data);
+  },
+  removeTodoAction(context, id) {
+    console.log(`this is from action ${id}`);
+
+    context.commit("removeTodoList", id);
   }
 };
 
@@ -46,6 +51,18 @@ export const mutations = {
   addTodoList(state, { data }) {
     state.dataTodos = [...state.dataTodos, data];
     console.log(state.dataTodos);
+  },
+  removeTodoList(state, id) {
+    // filtering todoList and remove the todo with the same id.
+    const removedTodoList = state.dataTodos.filter(item => {
+      if (item.id === id) {
+        // if the id is same then don't include inside.
+        return false;
+      } else {
+        return true;
+      }
+    });
+    state.dataTodos = removedTodoList;
   }
 };
 

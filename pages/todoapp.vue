@@ -157,7 +157,8 @@ export default {
   methods: {
     // 2nd Better way, on doing actions in Vuex
     ...mapActions({
-      addTodoAction: "todos/addTodoAction"
+      addTodoAction: "todos/addTodoAction",
+      removeTodoAction: "todos/removeTodoAction"
     }),
     markDone(id) {
       // this is 1 way on doing mutation.
@@ -168,7 +169,7 @@ export default {
       this.sortByDone = !this.sortByDone;
     },
     deleteTodo(id) {
-      console.log(id);
+      this.removeTodoAction(id);
     },
     // Submit addTodoInput
     addTodoList() {
@@ -180,6 +181,7 @@ export default {
         time: this.addTodoInput.time
       };
 
+      // in case you want to put a lot of data/parameter, watch "https://github.com/Frederick-88/vue-vuex-setup"
       this.addTodoAction({
         data: addTodoInputData
       });
