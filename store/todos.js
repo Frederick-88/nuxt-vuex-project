@@ -9,7 +9,7 @@ export const state = () => ({
     {
       id: 1596950024184,
       isDone: false,
-      title: "Master complete of Vuex (Action,Mutation,Getter,State)",
+      title: "Master complete of Vuex (Action, Mutation, Getter, State)",
       time: "19.30 - 21.30"
     }
   ]

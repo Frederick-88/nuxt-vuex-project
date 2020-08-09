@@ -1,12 +1,10 @@
  <template>
   <div class="nav">
-    <nuxt-link class="nav-item" to="/">List</nuxt-link>&nbsp;|
     <nuxt-link class="nav-item" to="/basicroute">Basic Route</nuxt-link>&nbsp;|
-    <nuxt-link class="nav-item" to="/basicroute/subroute">Try directly to subroute of basicRoute</nuxt-link>&nbsp;|
-    <nuxt-link class="nav-item" to="/create">Create</nuxt-link>
+    <nuxt-link class="nav-item" to="/basicroute/subroute">Try directly to subroute of basicRoute</nuxt-link>
   </div>
 </template>
-    
+
  <style scoped>
 .brand {
   font-family: "Montserrat", sans-serif;
