@@ -20,7 +20,7 @@
               >Sort By Done ({{ dataTodosDoneLength }})</p>
             </span>
             <span v-else class="d-flex d-row">
-              <button @click="sortByDoneFunction" class="btn nuxt-secondary-btn">
+              <button @click="sortByDoneFunction" class="btn nuxt-secondary-icon-btn">
                 <i class="far fa-circle fa-lg"></i>
               </button>
               <p
@@ -49,7 +49,7 @@
                   >
                     <i class="far fa-check-circle fa-2x"></i>
                   </button>
-                  <button @click="markDone(dataTodo.id)" v-else class="btn nuxt-secondary-btn">
+                  <button @click="markDone(dataTodo.id)" v-else class="btn nuxt-secondary-icon-btn">
                     <i class="far fa-circle fa-2x"></i>
                   </button>
                 </div>
@@ -89,7 +89,7 @@
                   >
                     <i class="far fa-check-circle fa-2x"></i>
                   </button>
-                  <button @click="markDone(dataTodo.id)" v-else class="btn nuxt-secondary-btn">
+                  <button @click="markDone(dataTodo.id)" v-else class="btn nuxt-secondary-icon-btn">
                     <i class="far fa-circle fa-2x"></i>
                   </button>
                 </div>
@@ -247,11 +247,11 @@ export default {
 .delete-btn:hover {
   color: #ff97a1;
 }
-.nuxt-secondary-btn {
+.nuxt-secondary-icon-btn {
   background: transparent;
   color: #bbbbbb;
 }
-.nuxt-secondary-btn:hover {
+.nuxt-secondary-icon-btn:hover {
   color: #39b982;
 }
 .nuxt-icon-button {

@@ -24,9 +24,18 @@ export const actions = {
     axios
       .post(`${url}/library/post`, inputReview)
       .then(res => {
-        console.log(res.data.data);
         // update to mutation
         context.commit("addDataReview", res.data.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
+  deleteReviewAction(context, id) {
+    axios
+      .delete(`${url}/library/delete/${id}`)
+      .then(res => {
+        context.commit("deleteReview", id);
       })
       .catch(error => {
         console.log(error);
@@ -42,10 +51,29 @@ export const mutations = {
   addDataReview(state, data) {
     // mutate state
     state.dataReviews = [...state.dataReviews, data];
-    console.log(state.dataReviews);
 
     // Toast Notification
     this.$toast.success("Your Review has been Posted!", {
+      timeout: 4000,
+      // the icon is available for fontawesome too!
+      icon: "fab fa-vuejs"
+    });
+  },
+  deleteReview(state, id) {
+    // mutate state
+    const removedDataReview = state.dataReviews.filter(item => {
+      // if there are state's id that same with the id passed, then remove. Else keep on.
+      if (item._id === id) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    // Replace current state of dataReview with removedDataReview.
+    state.dataReviews = removedDataReview;
+
+    // Toast Notification
+    this.$toast.error("You've deleted a Review.", {
       timeout: 4000,
       // the icon is available for fontawesome too!
       icon: "fab fa-vuejs"

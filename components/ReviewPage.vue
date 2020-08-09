@@ -61,6 +61,9 @@
                 <p class="card-text">{{ review.bookNumber }}</p>
               </div>
             </div>
+            <button @click="deleteReview(review._id)" class="btn nuxt-danger-icon-btn">
+              <i class="fas fa-times-circle fa-2x"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -74,7 +77,6 @@ export default {
   // Mounted = UseEffect/ComponentDidMount in ReactJS
   mounted() {
     this.getDataReviewAction();
-    console.log(this.dataReview);
   },
   data() {
     return {
@@ -95,15 +97,14 @@ export default {
         headline: "",
         description: ""
       }
-
-      // loadingDataReview: true,
     };
   },
   methods: {
     // 1 way on defining actions from other component in store, "review" refers to file name
     ...mapActions("review", {
       getDataReviewAction: "getDataReviewAction",
-      addDataReviewAction: "addDataReviewAction"
+      addDataReviewAction: "addDataReviewAction",
+      deleteReviewAction: "deleteReviewAction"
     }),
     // update the character gender
     updateSelectedCharacter(selected) {
@@ -132,6 +133,9 @@ export default {
 
       // Reset the form, the code structure below resetted by Prettier.
       (this.dataInput.headline = ""), (this.dataInput.description = "");
+    },
+    deleteReview(id) {
+      this.deleteReviewAction(id);
     }
   },
   computed: {
@@ -159,6 +163,17 @@ export default {
 .nuxt-btn:hover {
   background: gray;
   color: whitesmoke;
+}
+.nuxt-danger-icon-btn {
+  background: white;
+  border-radius: 2.5rem;
+  color: #dc3545;
+  position: relative;
+  margin-top: -1.5rem;
+  z-index: 1;
+}
+.nuxt-danger-icon-btn:hover {
+  color: #bd0013;
 }
 .special-card img {
   width: 6rem;
