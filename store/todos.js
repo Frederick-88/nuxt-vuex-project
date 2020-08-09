@@ -1,26 +1,14 @@
 export const state = () => ({
   dataTodos: [
     {
-      id: 1,
-      isDone: false,
-      title: "Big Design Meeting",
-      time: "10.30 - 12.30"
-    },
-    {
-      id: 2,
-      isDone: true,
-      title: "Big Developer Meeting",
-      time: "09.30 - 12.30"
-    },
-    {
-      id: 3,
+      id: 1596950024122,
       isDone: true,
       title: "Learn Nuxt and Vuex",
       time: "14.15 - 15.45"
     },
     {
-      id: 4,
-      isDone: true,
+      id: 1596950024184,
+      isDone: false,
       title: "Master complete of Vuex (Action,Mutation,Getter,State)",
       time: "19.30 - 21.30"
     }

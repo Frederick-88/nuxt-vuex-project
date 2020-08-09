@@ -32,6 +32,7 @@
       </div>
 
       <div class="mx-5">
+        <!-- if sortByDone = false, will map the data from all todos ("dataTodos") -->
         <div v-if="!sortByDone" class="row">
           <div
             v-for="(dataTodo, index) in dataTodos"
@@ -71,6 +72,7 @@
           </div>
         </div>
 
+        <!-- Else if sortByDone = true, will map the data from filtered Data ("dataTodosDone"). Reached from getter -->
         <div v-else class="row">
           <div
             v-for="(dataTodo, index) in dataTodosDone"
@@ -119,7 +121,7 @@
         hide-footer
       >
         <form @submit.prevent="addTodoList">
-          <p class="mb-1">Title</p>
+          <p class="mb-1">Title of Todo</p>
           <input v-model="addTodoInput.title" type="text" class="w-100 mb-3 form-control" required />
           <p class="mb-1">Time</p>
           <input v-model="addTodoInput.time" type="text" class="w-100 form-control" required />
@@ -196,7 +198,7 @@ export default {
     console.log(this.dataTodosDoneLength);
   },
   computed: {
-    // mapGetters will only map(like ReactJS) the getters in our Vuex.
+    // mapGetters will only map (like ReactJS) the getters in our Vuex.
     ...mapGetters({
       // see this for docs "https://codesandbox.io/s/gallant-tu-icxrw?file=/pages/todos.vue:526-570", basically "(our filename)/(getterName)"
       dataTodosDone: "todos/dataTodosDone",
