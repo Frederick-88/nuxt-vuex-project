@@ -5,27 +5,49 @@
     <!-- Increment -->
     <section>
       <h3 class="nuxt__text font-weight-bold">1. Increment</h3>
-      <h3 class="nuxt__text">State of Number from Vuex: {{countPlusLocalState}}</h3>
-      <button @click="increment" class="btn btn-success">Add Number +2 (From Mutation & Action)</button>
-      <button @click="decrement" class="btn btn-danger">Decrease Number -1</button>
+      <h3 class="nuxt__text">
+        State of Number from Vuex: {{ countPlusLocalState }}
+      </h3>
+      <button @click="increment" class="btn btn-success">
+        Add Number +2 (From Mutation & Action)
+      </button>
+      <button @click="decrement" class="btn btn-danger">
+        Decrease Number -1
+      </button>
     </section>
     <!-- TodoApp -->
     <section class="mt-4">
-      <h3 class="nuxt__text font-weight-bold">2. TodoApp with Vue-toastification</h3>
-      <p class="text-secondary">The Vue-Toastification was contained inside add and delete Todo</p>
-      <nuxt-link class="btn btn-outline-primary" to="/todoapp">Navigate to TodoApp</nuxt-link>
+      <h3 class="nuxt__text font-weight-bold">
+        2. TodoApp with Vue-toastification
+      </h3>
+      <p class="text-secondary">
+        The Vue-Toastification was contained inside add and delete Todo
+      </p>
+      <nuxt-link class="btn btn-outline-primary" to="/todoapp"
+        >Navigate to TodoApp</nuxt-link
+      >
     </section>
     <!-- Review with Axios/REST API Methods -->
     <section class="mt-4">
-      <h3 class="nuxt__text font-weight-bold">3. ReviewPage with REST API Method</h3>
-      <p class="text-secondary">All methods of Vuex used with REST API Method</p>
-      <nuxt-link class="btn btn-outline-primary" to="/review">Navigate to Review Page</nuxt-link>
+      <h3 class="nuxt__text font-weight-bold">
+        3. ReviewPage with REST API Method
+      </h3>
+      <p class="text-secondary">
+        All methods of Vuex used with REST API Method
+      </p>
+      <nuxt-link class="btn btn-outline-primary" to="/review"
+        >Navigate to Review Page</nuxt-link
+      >
     </section>
     <!-- Route & Subroute experiment -->
     <section class="mt-4">
       <h3 class="nuxt__text font-weight-bold">4. Route with Subroutes</h3>
-      <p class="text-secondary">A little bit messy, but logic was attach good with me hehehhe</p>
-      <nuxt-link class="btn btn-outline-primary" to="/routeexperiment">Navigate to Route Experiment</nuxt-link>
+      <p class="text-secondary">
+        A little bit messy, but logic was attached good with me hehehhe
+      </p>
+      <nuxt-link class="btn btn-outline-primary" to="/routeexperiment"
+        >Navigate to Route Experiment</nuxt-link
+      >
     </section>
   </div>
 </template>
@@ -66,5 +88,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
