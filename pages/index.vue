@@ -17,7 +17,7 @@
     </section>
     <!-- Review with Axios/REST API Methods -->
     <section class="mt-4">
-      <h3 class="nuxt__text font-weight-bold">3. ReviewPage with REST API Methoda</h3>
+      <h3 class="nuxt__text font-weight-bold">3. ReviewPage with REST API Method</h3>
       <p class="text-secondary">All methods of Vuex used with REST API Method</p>
       <nuxt-link class="btn btn-outline-primary" to="/review">Navigate to Review Page</nuxt-link>
     </section>
