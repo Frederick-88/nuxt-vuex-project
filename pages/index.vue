@@ -41,7 +41,7 @@
     </section>
     <!-- Route & Subroute experiment -->
     <section class="mt-4">
-      <h3 class="nuxt__text font-weight-bold">4. Route with Subroautes</h3>
+      <h3 class="nuxt__text font-weight-bold">4. Route with Subroutes</h3>
       <p class="text-secondary">
         A little bit messy, but logic was attached good with me hehehhe
       </p>
