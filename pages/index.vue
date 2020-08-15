@@ -39,9 +39,21 @@
         >Navigate to Review Page</nuxt-link
       >
     </section>
+    <!-- Vue Color by XiaoKaiKe -->
+    <section class="mt-4">
+      <h3 class="nuxt__text font-weight-bold">
+        4. Vue Color Plugin by XiaoKaiKe
+      </h3>
+      <p class="text-secondary">
+        Try this color picker !!
+      </p>
+      <nuxt-link class="btn btn-outline-primary" to="/vuecolor"
+        >Navigate to Vue Color</nuxt-link
+      >
+    </section>
     <!-- Route & Subroute experiment -->
     <section class="mt-4">
-      <h3 class="nuxt__text font-weight-bold">4. Route with Subroutes</h3>
+      <h3 class="nuxt__text font-weight-bold">5. Route with Subroutes</h3>
       <p class="text-secondary">
         A little bit messy, but logic was attached good with me hehehhe
       </p>

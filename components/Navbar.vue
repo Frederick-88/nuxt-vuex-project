@@ -1,16 +1,19 @@
- <template>
+<template>
   <div class="nav">
     <nuxt-link to="/" class="brand">NUXT - VUEX - PROJECT</nuxt-link>
     <nav>
       <nuxt-link class="nav-item" to="/">Home</nuxt-link>&nbsp;|
       <nuxt-link class="nav-item" to="/todoapp">TodoApp</nuxt-link>&nbsp;|
-      <nuxt-link class="nav-item" to="/routeexperiment">Route Experiment</nuxt-link>&nbsp;|
+      <nuxt-link class="nav-item" to="/vuecolor">Vue Color</nuxt-link>&nbsp;|
+      <nuxt-link class="nav-item" to="/routeexperiment"
+        >Route Experiment</nuxt-link
+      >&nbsp;|
       <nuxt-link class="nav-item" to="/review">Review Page</nuxt-link>
     </nav>
   </div>
 </template>
 
- <style scoped>
+<style scoped>
 .brand {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
