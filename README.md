@@ -9,7 +9,7 @@
 - using state, you need to put it in computed. So when there are changes it will update.
 - sometimes when there are problem, try to modify the result from prettier.
 - Modal Assisted with Vue-Bootstrap
-- Integrated Vue-Color by XiaoKaiKe in NUXT
+- Integrated Vue-Color by XiaoKaiKe in NuxtJS
 
 ## Build Setup
 
