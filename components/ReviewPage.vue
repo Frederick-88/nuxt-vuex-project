@@ -10,11 +10,15 @@
             :key="index"
             class="col-3 azur-border mx-2"
             :class="{
-                activeBorder: selectedCharacter === character.characterGender,
-              }"
+              activeBorder: selectedCharacter === character.characterGender
+            }"
             @click="updateSelectedCharacter(character.characterGender)"
           >
-            <img :src="character.characterImage" alt="char-image" class="w-100" />
+            <img
+              :src="character.characterImage"
+              alt="char-image"
+              class="w-100"
+            />
           </div>
         </div>
         <div>
@@ -39,7 +43,9 @@
             required
           />
         </div>
-        <button type="submit" class="btn nuxt-btn w-75 mt-4">Submit Review</button>
+        <button type="submit" class="btn nuxt-btn w-75 mt-4">
+          Submit Review
+        </button>
       </form>
     </div>
 
@@ -47,11 +53,20 @@
     <div class="text-center" style="margin:2rem 8rem">
       <h3 class="nuxt__text font-weight-bold">The Review Data belongs here</h3>
       <div class="row mb-4">
-        <div v-for="(review, index) in dataReview" :key="index" class="col-4 mt-4">
+        <div
+          v-for="(review, index) in dataReview"
+          :key="index"
+          class="col-4 mt-4"
+        >
           <div class="special-card">
             <div class="d-flex justify-content-center">
               <!-- In my backend, ImageBook = Image(At Here) -->
-              <img :src="review.imageBook" alt="char-img" class="rounded-circle" style />
+              <img
+                :src="review.imageBook"
+                alt="char-img"
+                class="rounded-circle"
+                style
+              />
             </div>
             <div class="card">
               <div class="card-body pt-5">
@@ -61,7 +76,10 @@
                 <p class="card-text">{{ review.bookNumber }}</p>
               </div>
             </div>
-            <button @click="deleteReview(review._id)" class="btn nuxt-danger-icon-btn">
+            <button
+              @click="deleteReview(review._id)"
+              class="btn nuxt-danger-icon-btn"
+            >
               <i class="fas fa-times-circle fa-2x"></i>
             </button>
           </div>
@@ -88,7 +106,7 @@ export default {
             "http://geniusdevs.com/themeforest/prolab/probucket/assets/images/testimonialimage/1.jpg"
         },
         {
-          characterGender: "Women",
+          characterGender: "Woamen",
           characterImage:
             "http://geniusdevs.com/themeforest/prolab/probucket/assets/images/testimonialimage/2.jpg"
         }
