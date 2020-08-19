@@ -106,7 +106,7 @@ export default {
             "http://geniusdevs.com/themeforest/prolab/probucket/assets/images/testimonialimage/1.jpg"
         },
         {
-          characterGender: "Woamen",
+          characterGender: "Women",
           characterImage:
             "http://geniusdevs.com/themeforest/prolab/probucket/assets/images/testimonialimage/2.jpg"
         }
