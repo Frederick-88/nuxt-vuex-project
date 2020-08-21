@@ -22,7 +22,7 @@
             <Sketch v-model="colors4" />
           </client-only>
           <h5 class="text-secondary mt-3">
-            SketchData : take a look on consolea
+            SketchData : take a look on console
           </h5>
           <div
             class="vue-color-bg"
