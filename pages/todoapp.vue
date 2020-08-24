@@ -252,7 +252,7 @@ export default {
       return this.$store.state.todos.dataTodos;
     }
   },
-  // subscribe the store in Vuex, to receive any changes that happenin
+  // subscribe the store in Vuex, to receive any changes that happening
   created() {
     this.unsubscribe = this.$store.subscribe((mutation, state) => {
       console.log("state changes");
