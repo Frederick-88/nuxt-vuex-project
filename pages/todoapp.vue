@@ -3,9 +3,15 @@
     <h2 class="nuxt__text text-center">TO-DO-APP</h2>
     <section class="nuxt-bg">
       <div class="mb-4 mx-5 d-flex justify-content-center">
-        <div class="bg-white w-50 p-3 d-flex justify-content-center" style="border-radius:0.25rem">
+        <div
+          class="bg-white w-50 p-3 d-flex justify-content-center"
+          style="border-radius:0.25rem"
+        >
           <!-- No function, directly change the state of "displayAddTodoModal" -->
-          <button @click="displayAddTodoModal = !displayAddTodoModal" class="btn btn-outline-nuxt">
+          <button
+            @click="displayAddTodoModal = !displayAddTodoModal"
+            class="btn btn-outline-nuxt"
+          >
             ADD TODO
             <i class="far fa-plus ml-2 fa-lg"></i>
           </button>
@@ -15,17 +21,20 @@
               <button @click="sortByDoneFunction" class="btn nuxt-icon-button">
                 <i class="far fa-check-circle fa-lg"></i>
               </button>
-              <p
-                class="font-weight-bold align-self-center my-0 nuxt__text"
-              >Sort By Done ({{ dataTodosDoneLength }})</p>
+              <p class="font-weight-bold align-self-center my-0 nuxt__text">
+                Sort By Done ({{ dataTodosDoneLength }})
+              </p>
             </span>
             <span v-else class="d-flex d-row">
-              <button @click="sortByDoneFunction" class="btn nuxt-secondary-icon-btn">
+              <button
+                @click="sortByDoneFunction"
+                class="btn nuxt-secondary-icon-btn"
+              >
                 <i class="far fa-circle fa-lg"></i>
               </button>
-              <p
-                class="font-weight-bold align-self-center my-0 nuxt__text"
-              >Sort By Done ({{ dataTodosDoneLength }})</p>
+              <p class="font-weight-bold align-self-center my-0 nuxt__text">
+                Sort By Done ({{ dataTodosDoneLength }})
+              </p>
             </span>
           </div>
         </div>
@@ -49,7 +58,11 @@
                   >
                     <i class="far fa-check-circle fa-2x"></i>
                   </button>
-                  <button @click="markDone(dataTodo.id)" v-else class="btn nuxt-secondary-icon-btn">
+                  <button
+                    @click="markDone(dataTodo.id)"
+                    v-else
+                    class="btn nuxt-secondary-icon-btn"
+                  >
                     <i class="far fa-circle fa-2x"></i>
                   </button>
                 </div>
@@ -58,12 +71,17 @@
                     <h5
                       :class="{ doneTxt: dataTodo.isDone }"
                       class="card-title nuxt__text font-weight-bold"
-                    >{{ dataTodo.title }}</h5>
+                    >
+                      {{ dataTodo.title }}
+                    </h5>
                     <p class="card-text text-secondary">{{ dataTodo.time }}</p>
                   </div>
                 </div>
                 <div class="col-md-2 my-auto text-center">
-                  <button @click="deleteTodo(dataTodo.id)" class="btn delete-btn">
+                  <button
+                    @click="deleteTodo(dataTodo.id)"
+                    class="btn delete-btn"
+                  >
                     <i class="far fa-times-circle fa-2x"></i>
                   </button>
                 </div>
@@ -89,7 +107,11 @@
                   >
                     <i class="far fa-check-circle fa-2x"></i>
                   </button>
-                  <button @click="markDone(dataTodo.id)" v-else class="btn nuxt-secondary-icon-btn">
+                  <button
+                    @click="markDone(dataTodo.id)"
+                    v-else
+                    class="btn nuxt-secondary-icon-btn"
+                  >
                     <i class="far fa-circle fa-2x"></i>
                   </button>
                 </div>
@@ -98,12 +120,17 @@
                     <h5
                       :class="{ doneTxt: dataTodo.isDone }"
                       class="card-title nuxt__text font-weight-bold"
-                    >{{ dataTodo.title }}</h5>
+                    >
+                      {{ dataTodo.title }}
+                    </h5>
                     <p class="card-text text-secondary">{{ dataTodo.time }}</p>
                   </div>
                 </div>
                 <div class="col-md-2 my-auto text-center">
-                  <button @click="deleteTodo(dataTodo.id)" class="btn delete-btn">
+                  <button
+                    @click="deleteTodo(dataTodo.id)"
+                    class="btn delete-btn"
+                  >
                     <i class="far fa-times-circle fa-2x"></i>
                   </button>
                 </div>
@@ -122,15 +149,27 @@
       >
         <form @submit.prevent="addTodoList">
           <p class="mb-1">Title of Todo</p>
-          <input v-model="addTodoInput.title" type="text" class="w-100 mb-3 form-control" required />
+          <input
+            v-model="addTodoInput.title"
+            type="text"
+            class="w-100 mb-3 form-control"
+            required
+          />
           <p class="mb-1">Time</p>
-          <input v-model="addTodoInput.time" type="text" class="w-100 form-control" required />
+          <input
+            v-model="addTodoInput.time"
+            type="text"
+            class="w-100 form-control"
+            required
+          />
           <div class="d-flex d-row mt-4">
             <button
               type="button"
               @click="displayAddTodoModal = !displayAddTodoModal"
               class="btn btn-outline-danger w-50 mr-4"
-            >Close</button>
+            >
+              Close
+            </button>
             <button type="submit" class="btn btn-outline-nuxt w-50">Add</button>
           </div>
         </form>
@@ -212,6 +251,16 @@ export default {
     dataTodos() {
       return this.$store.state.todos.dataTodos;
     }
+  },
+  // subscribe the store in Vuex, to receive any changes that happening
+  created() {
+    this.unsubscribe = this.$store.subscribe((mutation, state) => {
+      console.log("state changes");
+      console.log(state);
+    });
+  },
+  beforeDestroy() {
+    this.unsubscribe();
   }
 };
 </script>
