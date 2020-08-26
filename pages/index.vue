@@ -59,7 +59,7 @@
       <p class="text-secondary">
         Drag the element inside html that you structured.
       </p>
-      <nuxt-link class="btn btn-outline-primary" to="/vuecolor"
+      <nuxt-link class="btn btn-outline-primary" to="/dragpage"
         >Navigate to Vue Color</nuxt-link
       >
     </section>
