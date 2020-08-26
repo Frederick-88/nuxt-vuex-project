@@ -60,7 +60,7 @@
         Drag the element inside html that you structured.
       </p>
       <nuxt-link class="btn btn-outline-primary" to="/dragpage"
-        >Navigate to Vue Color</nuxt-link
+        >Navigate to Vue-Draggable</nuxt-link
       >
     </section>
     <!-- Route & Subroute experiment -->
