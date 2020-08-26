@@ -51,13 +51,13 @@
         >Navigate to Vue Color</nuxt-link
       >
     </section>
-    <!-- Vue Color by XiaoKaiKe -->
+    <!-- Vue Draggable by Sortable.js -->
     <section class="mt-4">
       <h3 class="nuxt__text font-weight-bold">
         5. Vue-Draggable Plugin by Sortable.js
       </h3>
       <p class="text-secondary">
-        Drag the element inside html that you structured.
+        Drag the element inside Interface that you structured.
       </p>
       <nuxt-link class="btn btn-outline-primary" to="/dragpage"
         >Navigate to Vue-Draggable</nuxt-link
