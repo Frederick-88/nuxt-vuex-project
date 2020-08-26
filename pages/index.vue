@@ -51,9 +51,21 @@
         >Navigate to Vue Color</nuxt-link
       >
     </section>
+    <!-- Vue Color by XiaoKaiKe -->
+    <section class="mt-4">
+      <h3 class="nuxt__text font-weight-bold">
+        5. Vue-Draggable Plugin by Sortable.js
+      </h3>
+      <p class="text-secondary">
+        Drag the element inside html that you structured.
+      </p>
+      <nuxt-link class="btn btn-outline-primary" to="/vuecolor"
+        >Navigate to Vue Color</nuxt-link
+      >
+    </section>
     <!-- Route & Subroute experiment -->
     <section class="mt-4">
-      <h3 class="nuxt__text font-weight-bold">5. Route with Subroutes</h3>
+      <h3 class="nuxt__text font-weight-bold">6. Route with Subroutes</h3>
       <p class="text-secondary">
         A little bit messy, but logic was attached good with me hehehhe
       </p>
