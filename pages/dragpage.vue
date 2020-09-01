@@ -1,6 +1,6 @@
 <template>
   <div class="drag__container">
-    <h2>Draggable Page from Vue-Daraggable</h2>
+    <h2>Draggable Page from Vue-Draggable</h2>
     <!-- <draggable v-model="exampleList">
       <div v-for="text in exampleList" :key="text">{{ text }}</div>
     </draggable> -->
