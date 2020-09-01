@@ -4,16 +4,26 @@
     <!-- <draggable v-model="exampleList">
       <div v-for="text in exampleList" :key="text">{{ text }}</div>
     </draggable> -->
-    <draggable tag="ul" :list="exampleList" class="list-group" handle=".handle">
-      <li class="list-group-item" v-for="(list, idx) in exampleList" :key="idx">
-        <i class="fa fa-align-justify handle"></i>
+    <draggable
+      tag="ul"
+      v-model="exampleList"
+      v-bind="dragOptions"
+      @start="drag = true"
+      @end="drag = false"
+      class="list-group"
+      handle=".handle"
+    >
+      <transition-group type="transition">
+        <li class="list-group-item" v-for="list in exampleList" :key="list.id">
+          <i class="fa fa-align-justify handle"></i>
 
-        <span class="text">{{ list.name }} </span>
+          <span class="text">{{ list.name }} </span>
 
-        <input type="text" class="form-control" v-model="list.text" />
+          <input type="text" class="form-control" v-model="list.text" />
 
-        <i class="fa fa-times close"></i>
-      </li>
+          <i class="fa fa-times close"></i>
+        </li>
+      </transition-group>
     </draggable>
     {{ exampleList }}
   </div>
@@ -26,9 +36,21 @@ export default {
       exampleList: [
         { name: "John", text: "", id: 0 },
         { name: "Joao", text: "", id: 1 },
-        { name: "Jean", text: "", id: 2 }
-      ]
+        { name: "Jean", text: "", id: 2 },
+        { name: "Fred", text: "", id: 3 }
+      ],
+      drag: false
     };
+  },
+  computed: {
+    dragOptions() {
+      return {
+        animation: 200,
+        group: "description",
+        disabled: false,
+        ghostClass: "ghost"
+      };
+    }
   }
 };
 </script>
