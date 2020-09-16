@@ -63,9 +63,22 @@
         >Navigate to Vue-Draggable</nuxt-link
       >
     </section>
+    <!-- Vue-Textarea-Autosize by devstark-com -->
+    <section class="mt-4">
+      <h3 class="nuxt__text font-weight-bold">
+        6. Vue-Textarea-Autosize by devstark-com
+      </h3>
+      <p class="text-secondary">
+        Auto increase height once words touch the width limit. Good usage &
+        feature for renamings.
+      </p>
+      <nuxt-link class="btn btn-outline-primary" to="/textarea"
+        >Navigate to Vue-Textarea-Autosize</nuxt-link
+      >
+    </section>
     <!-- Route & Subroute experiment -->
     <section class="mt-4">
-      <h3 class="nuxt__text font-weight-bold">6. Route with Subroutes</h3>
+      <h3 class="nuxt__text font-weight-bold">7. Route with Subroutes</h3>
       <p class="text-secondary">
         A little bit messy, but logic was attached good with me hehehhe
       </p>

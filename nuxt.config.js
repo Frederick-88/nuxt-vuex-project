@@ -51,7 +51,10 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [{ src: "~plugins/vuedraggable.js" }],
+  plugins: [
+    { src: "~plugins/vuedraggable.js" },
+    { src: "~/plugins/vueTextarea.js" }
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
