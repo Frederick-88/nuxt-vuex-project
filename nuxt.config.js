@@ -48,7 +48,7 @@ export default {
    */
   css: [],
   /*
-   ** Plugins to load before mounting the App
+   ** Plugins to load before mounting the Appa
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
