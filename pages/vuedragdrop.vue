@@ -1,55 +1,50 @@
 <template>
   <div>
-    <div>
-      <drag
-        v-for="group in groups"
-        class="drag"
-        :key="group"
-        :transfer-data="{ group, example: 'groups' }"
-        @dragstart="dragging = group"
-        @dragend="dragging = null"
-      >
-        {{ group }}
-      </drag>
-    </div>
-    <div>
-      <drop
-        v-for="group in groups"
-        class="drop"
-        :key="group"
-        :class="{ allowed: dragging === group }"
-        @dragover="handleDragover(group, ...arguments)"
-        @drop="handleDrop"
-      >
-        {{ group }}
-      </drop>
-    </div>
+    <drag class="drag" :transfer-data="{ example: 'styling' }">drag</drag>
+    <drop
+      class="drop"
+      :class="{ over: activeDrag === 'drop1' }"
+      @dragover="activeDrag = 'drop1'"
+      @dragleave="activeDrag = ''"
+      @drop="handleDrop"
+    >
+      {{ activeDrag === "drop1" ? "Drop Here Please!" : "drop" }}
+    </drop>
+    <drop
+      class="drop"
+      :class="{ over: activeDrag === 'drop2' }"
+      @dragover="activeDrag = 'drop2'"
+      @dragleave="activeDrag = ''"
+      @drop="handleDrop"
+    >
+      {{ activeDrag === "drop2" ? "Drop Here Please!" : "drop" }}
+    </drop>
+    <drop
+      class="drop"
+      :class="{ over: activeDrag === 'drop3' }"
+      @dragover="activeDrag = 'drop3'"
+      @dragleave="activeDrag = ''"
+      @drop="handleDrop"
+    >
+      {{ activeDrag === "drop3" ? "Drop Here Please!" : "drop" }}
+    </drop>
   </div>
 </template>
 
 <script>
 import { Drag, Drop } from "vue-drag-drop";
 export default {
-  name: "vuedragdrop",
   components: { Drag, Drop },
-  data: function() {
+  data() {
     return {
-      groups: ["Project 1", "Project 2", "Project 3"],
-      dragging: null
+      over: false,
+      activeDrag: ""
     };
   },
   methods: {
-    handleDragover(group, data, event) {
-      // console.log("group", group);
-      // console.log("data", data);
-      // if (group !== data.group) {
-      //   event.dataTransfer.dropEffect = "none";
-      // }
-    },
     handleDrop(data) {
-      console.log("fixData", data);
-
-      alert(`You dropped with data: ${data}`);
+      this.over = false;
+      alert(`You dropped with data: ${JSON.stringify(data)}`);
     }
   }
 };
@@ -63,7 +58,7 @@ export default {
   display: inline-block;
   padding: 50px;
 }
-.drop.allowed {
+.drop.over {
   background-color: #dfd;
 }
 </style>

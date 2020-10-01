@@ -7,6 +7,9 @@
       <nuxt-link class="nav-item" to="/vuecolor">Vue Color</nuxt-link>&nbsp;|
       <nuxt-link class="nav-item" to="/dragpage">Vue-Draggable Plugin</nuxt-link
       >&nbsp;|
+      <nuxt-link class="nav-item" to="/vuedragdrop"
+        >Vue Drag & Drop Plugin</nuxt-link
+      >&nbsp;|
       <nuxt-link class="nav-item" to="/routeexperiment"
         >Route Experiment</nuxt-link
       >&nbsp;|
