@@ -8,7 +8,7 @@
       <nuxt-link class="nav-item" to="/dragpage">Vue-Draggable Plugin</nuxt-link
       >&nbsp;|
       <nuxt-link class="nav-item" to="/vuedragdrop"
-        >Vue Drag & Drop Plugin</nuxt-link
+        >Vue Drag & Droap Plugin</nuxt-link
       >&nbsp;|
       <nuxt-link class="nav-item" to="/routeexperiment"
         >Route Experiment</nuxt-link
