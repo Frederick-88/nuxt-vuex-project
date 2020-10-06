@@ -88,7 +88,7 @@
         >Navigate to Vue-Textarea-Autosize</nuxt-link
       >
     </section>
-    <!-- Route & Subroute experiment -->
+    <!-- Route & Subroutea experiment -->
     <section class="mt-4">
       <h3 class="nuxt__text font-weight-bold">8. Route with Subroutes</h3>
       <p class="text-secondary">
