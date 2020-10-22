@@ -1,6 +1,6 @@
 <template>
   <div>
-    <drag class="drag" :transfer-data="{ example: 'styling' }">drag</drag>
+    <drag class="drag" :transfer-data="{ example: 'styling' }">draag</drag>
     <drop
       class="drop"
       :class="{ over: activeDrag === 'drop1' }"
