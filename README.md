@@ -11,21 +11,25 @@
 - Modal Assisted with Vue-Bootstrap
 - Integrated Vue-Color by XiaoKaiKe in NuxtJS
 
-## Build Setup
+## Axios Delete Req.Body send handling
 
-```bash
-# install dependencies
-$ npm install
+    const deleteLogoData = {
+      brand_id: brandId,
+      logo: splitFileName,
+    };
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+    function serialize(obj) {
+      return `?${Object.keys(obj)
+        .reduce((a, k) => {
+          a.push(`${k}=${encodeURIComponent(obj[k])}`);
+          return a;
+        }, [])
+        .join('&')}`;
+    }
+    
+    axios.delete(
+        `/accounts/brands/delete-logo/${brandId}/${splitFileName}${serialize(
+          deleteLogoData
+        )}`
+      );
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
