@@ -8,7 +8,8 @@
 - creating a form in Vuex, when submit you need to create a new variable to contain the objects. Because it will conflict with v-model and error once you run it. And also so you could reset the inputs again.
 - using state, you need to put it in computed. So when there are changes it will update.
 - Integrated Vue-Color by XiaoKaiKe in NuxtJS
-- Google drive file upload
+- Google drive & Dropbox file upload
+- For Facebook & Twitter can use vue-social-media plugin
 
 ## Axios Delete Req.Body send handling
 
@@ -25,10 +26,9 @@
         }, [])
         .join('&')}`;
     }
-    
+
     axios.delete(
         `/accounts/brands/delete-logo/${brandId}/${splitFileName}${serialize(
           deleteLogoData
         )}`
       );
-
