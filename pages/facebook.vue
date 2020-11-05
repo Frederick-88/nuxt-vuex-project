@@ -3,6 +3,7 @@
     <h3>Facebook File Upload</h3>
     <p>Can use Vue-Social-Media to help</p>
     <p>{{ dataShareUrl }}</p>
+    <!-- this one is offeo's not recommended -->
     <div
       id="socialshare"
       class="square"
